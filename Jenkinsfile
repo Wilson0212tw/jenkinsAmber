@@ -3,7 +3,7 @@ def gitRepoUrl = 'http://git.bomao.com/appv3/app.git'
 //分支名稱
 def envName = ''
 // 使用的認證id
-def credentialsId = '6bb95d94-704b-4437-8e61-f9f12303c37e'
+def credentialsId = 'd01436e6-70ae-49fe-9bd5-85eaabc8c4f9'
 // 專案資料夾名稱
 def projectName = 'app'
 // // 包名後綴時間
