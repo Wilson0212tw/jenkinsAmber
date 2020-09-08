@@ -22,7 +22,7 @@ def bundleId = ''
 //腳本資料夾名稱
 def cmdsFolderName = 'cmds'
 //腳本所在Repo
-def cmdsRepoUrl = 'https://github.com/AmberNet-TW-Will/BMArchive.git'
+def cmdsRepoUrl = 'https://github.com/Wilson0212tw/jenkinsAmber.git'
 //Repo 認證資料
 def cmdsCredentialsId = 'ae5539dc-8fb3-463b-9a9d-71b14a91577a'
 //腳本Repo 分支名稱
