@@ -145,8 +145,8 @@ def getReleaseText(env, platform, packageName, reason, downloadUrl) {
 def sendTelegram(message) {
     def encodedMessage = URLEncoder.encode(message, "UTF-8")
 
-    withCredentials([string(credentialsId: 'tgArchiveBotId', variable: 'TOKEN'),
-    string(credentialsId: 'tgBmFlutterArchiveChatId', variable: 'CHAT_ID')]) {
+    withCredentials([string(credentialsId: '5ae49ff3-63b4-4b32-b7d0-cf4e9ed42a0c', variable: 'TOKEN'),
+    string(credentialsId: '5e2b4294-7b31-4408-a0c7-b0dfd2c97394', variable: 'CHAT_ID')]) {
         response = httpRequest (consoleLogResponseBody: true,
                 contentType: 'APPLICATION_JSON',
                 httpMode: 'GET',
