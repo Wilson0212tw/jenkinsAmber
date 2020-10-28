@@ -69,6 +69,12 @@ pipeline {
             steps {
                 dir(projectName) {
                     script {
+                              def fields = env.getEnvironment()
+                                    fields.each {
+                                    key, value -> println("${key} = ${value}");
+                                    }
+ 
+                                println(env.PATH)
                         switch (params.平台) {
                             case 'ios':
                                 sh 'make build-ios;make release-ios'
