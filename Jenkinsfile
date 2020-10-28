@@ -74,7 +74,11 @@ pipeline {
                                 sh 'make build-ios;make release-ios'
                                 break;
                             case 'android':
-                                sh 'make build-android'
+                                // sh 'make build-android'
+                                sh  """
+                                    	flutter build apk --build-name 3.0.1 --build-number 120
+	                                    mv build/app/outputs/apk/release/app-release.apk  build/Runner.apk
+                                    """
                                 break;
                             case 'both':
                                 sh 'make build-ios;make release-ios;make build-android'
