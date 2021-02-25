@@ -106,6 +106,11 @@ pipeline {
                             downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=prd'
                             bundleId = 'com.ibmao88.bocatapp'
                             break
+                        case 'prdv2':
+                            envStg = 'prd'
+                            downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=prd'
+                            bundleId = 'com.ibmao88.bocatapp'
+                            break
                         default:
                             break
                     }
