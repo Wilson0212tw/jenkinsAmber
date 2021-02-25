@@ -56,6 +56,9 @@ pipeline {
                         case 'prd':
                             envName = 'prd'
                             break
+                        case 'prdv2':
+                            envName = 'prdv2'
+                            break
                         default:
                             break
                     }   
