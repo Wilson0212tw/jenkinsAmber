@@ -52,6 +52,9 @@ sshpass -p "27ZrKw^h2e2rFnph" scp -P 22897 TW_RD@10.6.1.100:/home/img-server/bm-
 
 #步驟5: 插入下載鏈結
 #步驟5: 插入下載鏈結
+sed -ie '1i\
+<H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.phl5b.org/iOS/bm_'$2'/'$1'.plist">'$1'</a></H1>
+' ../../tempReleaseFolder/bm-$2-iOS.html
 
 if [ '$2' = "stg" ]
 then
@@ -60,14 +63,10 @@ then
 ' ../../tempReleaseFolder/bm-$2-iOS.html
 else
     sed -ie '1i\
-<H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/rbd8eqmu1699m2e/BM_PRD_NEW.plist">'$1'</a></H1>
+<H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/batx00ehph50r5j/BM_PRD_NEW.plist">'$1'</a></H1>
 ' ../../tempReleaseFolder/bm-$2-iOS.html
 fi
 
-
-sed -ie '1i\
-<H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.phl5b.org/iOS/bm_'$2'/'$1'.plist">'$1'</a></H1>
-' ../../tempReleaseFolder/bm-$2-iOS.html
 
 
 #步驟6: 上傳ipa, plist
