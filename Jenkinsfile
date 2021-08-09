@@ -107,6 +107,7 @@ pipeline {
                             // bundleId = 'com.ibmao88.bocatappStg'
                             bundleId = 'com.amber.bmstg'
                             envVer= '1'
+                                break
                         case 'stg2':
                             envStg = 'stg'
                             downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=stg'
