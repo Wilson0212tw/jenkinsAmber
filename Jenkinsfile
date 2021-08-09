@@ -19,6 +19,8 @@ def downloadUrl = ''
 // iOS用bundleID
 def bundleId = ''
 
+def envVer=''
+
 //腳本資料夾名稱
 def cmdsFolderName = 'cmds'
 //腳本所在Repo
@@ -52,6 +54,9 @@ pipeline {
                     switch (params.環境) {
                         case 'stg':
                             envName = 'stg'
+                            break
+                               case 'stg2':
+                            envName = 'stg2'
                             break
                         case 'prd':
                             envName = 'prd'
@@ -99,17 +104,28 @@ pipeline {
                         case 'stg':
                             envStg = 'stg'
                             downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=stg'
-                            bundleId = 'com.ibmao88.bocatappStg'
+                            // bundleId = 'com.ibmao88.bocatappStg'
+                            bundleId = 'com.amber.bmstg'
+                            envVer= '1'
+                        case 'stg2':
+                            envStg = 'stg'
+                            downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=stg'
+                            // bundleId = 'com.ibmao88.bocatappStg'
+                            bundleId = 'com.amber.bmstg'
+                            envVer='2'
                             break
+
                         case 'prd':
                             envStg = 'prd'
                             downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=prd'
                             bundleId = 'com.ibmao88.bocatapp'
+                            envVer= '1'
                             break
                         case 'prdv2':
                             envStg = 'prd'
                             downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=prd'
                             bundleId = 'com.ibmao88.bocatapp'
+                            envVer= '2'
                             break
                         default:
                             break
@@ -120,7 +136,7 @@ pipeline {
                     switch(params.平台) {
                         case 'ios':
                             dir('cmds/cmds') {
-                                def cmd = 'sh releaseIOS.sh ' + packageName + ' ' + envStg + ' ' + bundleId
+                                def cmd = 'sh releaseIOSv2.sh ' + packageName + ' ' + envStg + ' ' + bundleId + ' ' +envVer
                                 sh cmd
                                 sh 'sh cleanBuildAndReleaseFolder.sh'
                             }   
