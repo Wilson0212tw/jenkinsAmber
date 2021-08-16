@@ -21,20 +21,20 @@ sshpass -p "27ZrKw^h2e2rFnph" scp -P 22897 TW_RD@10.6.1.100:/home/img-server/bm-
 
 if [ '$2' = "stg" ]
 then
-if [ '$4' = "1" ]
-then 
-   sed -ie '1i\
-<H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/2loj8bmorcu0sow/BM_test_NEW.plist">'$1'</a></H1>
- <img src="/bmImg/test_stg.jpeg" style="width:300px">
- <H2>==============================================================</H2>
- ' ../../tempReleaseFolder/bm-$2-iOS.html
-else
-   sed -ie '1i\
- <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/9axp60nequqxwaq/BM_test_NEW2.plist">'$1'</a></H1>
- <img src="/bmImg/test_stg2.jpeg" style="width:300px">
- <H2>==============================================================</H2>
- ' ../../tempReleaseFolder/bm-$2-iOS.html
- fi
+       if [ '$4' = "1" ]
+       then 
+       sed -ie '1i\
+      <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/2loj8bmorcu0sow/BM_test_NEW.plist">'$1'</a></H1>
+      <img src="/bmImg/test_stg.jpeg" style="width:300px">
+      <H2>==============================================================</H2>
+      ' ../../tempReleaseFolder/bm-$2-iOS.html
+     else
+     sed -ie '1i\
+    <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/9axp60nequqxwaq/BM_test_NEW2.plist">'$1'</a></H1>
+    <img src="/bmImg/test_stg2.jpeg" style="width:300px">
+    <H2>==============================================================</H2>
+     ' ../../tempReleaseFolder/bm-$2-iOS.html
+     fi
 else
     sed -ie '1i\
 <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/batx00ehph50r5j/BM_PRD_NEW.plist">'$1'</a></H1>
@@ -47,12 +47,12 @@ fi
 
 if [ '$2' = "stg" ]
 then
-if [ '$4' = "1" ]
-then 
-cp ../../tempReleaseFolder/$1.ipa $HOME/Dropbox/BM_test_NEW.ipa
-else 
-cp ../../tempReleaseFolder/$1.ipa $HOME/Dropbox/BM_test_NEW2.ipa
-fi
+     if [ '$4' = "1" ]
+    then 
+     cp ../../tempReleaseFolder/$1.ipa $HOME/Dropbox/BM_test_NEW.ipa
+     else 
+    cp ../../tempReleaseFolder/$1.ipa $HOME/Dropbox/BM_test_NEW2.ipa
+    fi
 else
 cp ../../tempReleaseFolder/$1.ipa $HOME/Dropbox/BM_PRD_NEW.ipa
 fi
