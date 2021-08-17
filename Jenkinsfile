@@ -137,7 +137,8 @@ pipeline {
                     switch(params.平台) {
                         case 'ios':
                             dir('cmds/cmds') {
-                                def cmd = 'sh releaseIOSv2.sh ' + packageName + ' ' + envStg + ' ' + bundleId + ' ' +envVer
+                                def cmd = 'sh releaseIOSv2.sh ' + packageName + ' ' + envStg + ' ' + bundleId + ' ' + envVer
+                                echo cmd
                                 sh cmd
                                 sh 'sh cleanBuildAndReleaseFolder.sh'
                             }   
@@ -153,7 +154,8 @@ pipeline {
                             break
                         case 'both':
                             dir('cmds/cmds') {
-                                def cmd1 = 'sh releaseIOSv2.sh ' + packageName + ' ' + envStg + ' ' + bundleId
+                                def cmd1 = 'sh releaseIOSv2.sh ' + packageName + ' ' + envStg + ' ' + bundleId + ' ' + envVer
+                                echo cmd
                                 sh cmd1
                                 def cmd2 = 'sh releaseAndroid.sh ' + packageName + ' ' + envStg
                                 sh cmd2
