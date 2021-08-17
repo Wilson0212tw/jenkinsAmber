@@ -107,29 +107,28 @@ pipeline {
                             // bundleId = 'com.ibmao88.bocatappStg'
                             bundleId = 'com.amber.bmstg'
                             envVer= '1'
-                                break
+                                break;
                         case 'stg2':
                             envStg = 'stg'
                             downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=stg'
                             // bundleId = 'com.ibmao88.bocatappStg'
                             bundleId = 'com.amber.bmstg'
                             envVer='2'
-                            break
+                            break;
 
                         case 'prd':
                             envStg = 'prd'
                             downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=prd'
                             bundleId = 'com.ibmao88.bocatapp'
                             envVer= '1'
-                            break
+                            break;
                         case 'prdv2':
                             envStg = 'prd'
                             downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=prd'
                             bundleId = 'com.ibmao88.bocatapp'
                             envVer= '2'
-                            break
-                        default:
-                            break
+                            break;
+      
                     }
                 }
                 

@@ -19,6 +19,10 @@ sshpass -p "27ZrKw^h2e2rFnph" scp -P 22897 TW_RD@10.6.1.100:/home/img-server/bm-
 #步驟5: 插入下載鏈結
 #步驟5: 插入下載鏈結
 
+echo $2
+echo $4
+echo  '-----param done--------' 
+
 if [ '$2' = "stg" ]
        then
        if [ '$4' = "1" ]
