@@ -21,6 +21,7 @@ cp ../../app/build/Runner.ipa ../../tempReleaseFolder/$1.ipa
 # https://www.dropbox.com/s/9axp60nequqxwaq/BM_test_NEW2.plist?dl=0
 # https://www.dropbox.com/s/ol5kx1fmf5b0fvh/BM_PRD_NEW.plist?dl=0
 
+
 ipaLinkPath=''
 plistLinkPath=''
 fileName=''
@@ -86,41 +87,19 @@ sshpass -p "27ZrKw^h2e2rFnph" scp -P 22897 TW_RD@10.6.1.100:/home/img-server/bm-
 
 #步驟5: 插入下載鏈結
 sed -ie '1i\
-    <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/'$plistLinkPath'/'$fileName'.plist">'$1'</a></H1> \n <img src="/bmImg/'$qrCodeFileName'.jpeg" style="width:300px"> \n <H2>==============================================================</H2>
+    <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/'$plistLinkPath'/'$fileName'.plist">'$1'</a></H1>\
+     <img src="/bmImg/'$qrCodeFileName'.jpeg" style="width:300px">\
+     <H2>==============================================================</H2>
      ' ../../tempReleaseFolder/bm-$2-iOS.html
 
 
-# if [ $2  ==  stg ] ; then
-#       echo " is stag:  $(($2 == stg))"
-#        if [ $4  ==  1  ] ; then
-#                sed -ie '1i\
-#                <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/2loj8bmorcu0sow/BM_test_NEW.plist">'$1'</a></H1> \n <img src="/bmImg/test_stg.jpeg" style="width:300px"> \n <H2>==============================================================</H2>
-#                ' ../../tempReleaseFolder/bm-$2-iOS.html
-#        else
-#              sed -ie '1i\
-#              <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/9axp60nequqxwaq/BM_test_NEW2.plist">'$1'</a></H1> \n <img src="/bmImg/test_stg2.jpeg" style="width:300px"> \n <H2>==============================================================</H2>
-#             ' ../../tempReleaseFolder/bm-$2-iOS.html
-#        fi
-# else
-#     sed -ie '1i\
-#     <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/batx00ehph50r5j/BM_PRD_NEW.plist">'$1'</a></H1>  \n <img src="/bmImg/prd.jpeg" style="width:300px"> \n <H2>==============================================================</H2>
-#     ' ../../tempReleaseFolder/bm-$2-iOS.html
-# fi
+
 
 
 #步驟6: 上傳ipa, plist
     cp ../../tempReleaseFolder/$1.ipa $HOME/Dropbox/$fileName.ipa
     cp ../../tempReleaseFolder/$fileName.plist $HOME/Dropbox/$fileName.plist
 
-# if [ $2 ==  stg ];  then
-#      if [ $4 ==  1 ] ;  then 
-#                cp ../../tempReleaseFolder/$1.ipa $HOME/Dropbox/BM_test_NEW.ipa
-#                cp ../../tempReleaseFolder/$fileName.plist $HOME/Dropbox/$fileName.plist
-#      else 
-#                cp ../../tempReleaseFolder/$1.ipa $HOME/Dropbox/BM_test_NEW2.ipa
-#     fi
-# else
-#      cp ../../tempReleaseFolder/$1.ipa $HOME/Dropbox/BM_PRD_NEW.ipa
-# fi
+
 #步驟7: 上傳html
 sshpass -p "27ZrKw^h2e2rFnph" scp -P 22897 ../../tempReleaseFolder/bm-$2-iOS.html TW_RD@10.6.1.100:/home/img-server/
