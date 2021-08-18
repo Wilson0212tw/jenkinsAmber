@@ -23,8 +23,10 @@ echo $2
 echo $4
 echo  '-----param done--------' 
 
-if [ $2  == "stg" ] ; then
-       if [ $4  == "1" ] ; then
+
+if [ $2  ==  stg ] ; then
+      echo " is stag:  $(($2 == stg))"
+       if [ $4  ==  1  ] ; then
                sed -ie '1i\
                <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/2loj8bmorcu0sow/BM_test_NEW.plist">'$1'</a></H1>
               <img src="/bmImg/test_stg.jpeg" style="width:300px">
@@ -38,6 +40,7 @@ if [ $2  == "stg" ] ; then
             ' ../../tempReleaseFolder/bm-$2-iOS.html
        fi
 else
+    echo " is stag:  $(($2 == stg))"
     sed -ie '1i\
     <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/batx00ehph50r5j/BM_PRD_NEW.plist">'$1'</a></H1>
     ' ../../tempReleaseFolder/bm-$2-iOS.html
@@ -47,8 +50,9 @@ fi
 
 #步驟6: 上傳ipa, plist
 
-if [ $2 == "stg" ];  then
-     if [ $4 == "1" ] ;  then 
+if [ $2 ==  stg ];  then
+    echo " is stag:  $(($2 == stg))"
+     if [ $4 ==  1 ] ;  then 
                cp ../../tempReleaseFolder/$1.ipa $HOME/Dropbox/BM_test_NEW.ipa
      else 
                cp ../../tempReleaseFolder/$1.ipa $HOME/Dropbox/BM_test_NEW2.ipa
