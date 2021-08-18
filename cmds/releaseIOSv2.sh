@@ -2,6 +2,7 @@
 
 #步驟1: 先檢查上版暫存資料夾是否存在
 
+
 if [ -d "../../tempReleaseFolder" ]
 then
     rm -rf ../../tempReleaseFolder
@@ -19,30 +20,22 @@ sshpass -p "27ZrKw^h2e2rFnph" scp -P 22897 TW_RD@10.6.1.100:/home/img-server/bm-
 #步驟5: 插入下載鏈結
 #步驟5: 插入下載鏈結
 
-echo $2
-echo $4
-echo  '-----param done--------' 
 
 
 if [ $2  ==  stg ] ; then
       echo " is stag:  $(($2 == stg))"
        if [ $4  ==  1  ] ; then
                sed -ie '1i\
-               <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/2loj8bmorcu0sow/BM_test_NEW.plist">'$1'</a></H1>
-              <img src="/bmImg/test_stg.jpeg" style="width:300px">
-               <H2>==============================================================</H2>
+               <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/2loj8bmorcu0sow/BM_test_NEW.plist">'$1'</a></H1> \n <img src="/bmImg/test_stg.jpeg" style="width:300px"> \n <H2>==============================================================</H2>
                ' ../../tempReleaseFolder/bm-$2-iOS.html
        else
              sed -ie '1i\
-             <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/9axp60nequqxwaq/BM_test_NEW2.plist">'$1'</a></H1>
-            <img src="/bmImg/test_stg2.jpeg" style="width:300px">
-            <H2>==============================================================</H2>
+             <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/9axp60nequqxwaq/BM_test_NEW2.plist">'$1'</a></H1> \n <img src="/bmImg/test_stg2.jpeg" style="width:300px"> \n <H2>==============================================================</H2>
             ' ../../tempReleaseFolder/bm-$2-iOS.html
        fi
 else
-    echo " is stag:  $(($2 == stg))"
     sed -ie '1i\
-    <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/batx00ehph50r5j/BM_PRD_NEW.plist">'$1'</a></H1>
+    <H1><a href="itms-services://?action=download-manifest&amp;url=https://dl.dropboxusercontent.com/s/batx00ehph50r5j/BM_PRD_NEW.plist">'$1'</a></H1>  \n <img src="/bmImg/prd.jpeg" style="width:300px"> \n <H2>==============================================================</H2>
     ' ../../tempReleaseFolder/bm-$2-iOS.html
 fi
 
