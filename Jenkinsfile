@@ -154,7 +154,6 @@ pipeline {
                         case 'both':
                             dir('cmds/cmds') {
                                 def cmd1 = 'sh releaseIOSv2.sh ' + packageName + ' ' + envStg + ' ' + bundleId + ' ' + envVer
-                                echo cmd
                                 sh cmd1
                                 def cmd2 = 'sh releaseAndroid.sh ' + packageName + ' ' + envStg
                                 sh cmd2
