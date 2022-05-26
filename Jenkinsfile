@@ -66,7 +66,7 @@ pipeline {
                             envName = 'prdv2'
                             break
                          case 'dev':
-                            envName = 'de'
+                            envName = 'dev'
                             break
                         default:
                             break
@@ -133,7 +133,7 @@ pipeline {
                             envVer = "2"
                             break;
                         case 'dev':
-                            envStg = "prd"
+                            envStg = "dev"
                             downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=dev'
                             bundleId = 'com.amber.bmdev'
                             envVer = "1"
