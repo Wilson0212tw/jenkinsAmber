@@ -1,5 +1,6 @@
 // Git Repo Url
-def gitRepoUrl = 'http://git.bomao.com/appv3/app.git'
+def gitRepoUrl = 'http://ec2-52-192-184-165.ap-northeast-1.compute.amazonaws.com/appv3/app.git'
+// def gitRepoUrl = 'http://git.bomao.com/appv3/app.git'
 //分支名稱
 def envName = ''
 // 使用的認證id
