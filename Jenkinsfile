@@ -1,6 +1,6 @@
 // Git Repo Url
-def gitRepoUrl = 'http://ec2-52-192-184-165.ap-northeast-1.compute.amazonaws.com/appv3/app.git'
-// def gitRepoUrl = 'http://git.bomao.com/appv3/app.git'
+// def gitRepoUrl = 'http://ec2-52-192-184-165.ap-northeast-1.compute.amazonaws.com/appv3/app.git'
+def gitRepoUrl = 'http://git.bomao.com/appv3/app.git'
 //分支名稱
 def envName = ''
 // 使用的認證id
@@ -65,6 +65,9 @@ pipeline {
                         case 'prdv2':
                             envName = 'prdv2'
                             break
+                         case 'dev':
+                            envName = 'de'
+                            break
                         default:
                             break
                     }   
@@ -120,14 +123,20 @@ pipeline {
                         case 'prd':
                             envStg = "prd"
                             downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=prd'
-                            bundleId = 'com.ibmao88.bocatapp'
+                            bundleId = 'com.ibmao88.88maoib'
                             envVer = "1"
                             break;
                         case 'prdv2':
                             envStg = "prd"
                             downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=prd'
-                            bundleId = 'com.ibmao88.bocatapp'
+                            bundleId = 'com.ibmao88.88maoib'
                             envVer = "2"
+                            break;
+                        case 'dev':
+                            envStg = "prd"
+                            downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=dev'
+                            bundleId = 'com.amber.bmdev'
+                            envVer = "1"
                             break;
       
                     }
