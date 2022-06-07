@@ -29,7 +29,7 @@ qrCodeFileName=""
 
 if [ $2  ==  stg ] ; then
        if [ $4  ==  1  ] ; then
-           ipaLinkPath="8l7ruj7d30y1wij"
+           ipaLinkPath="pqsveh4zg9duot3"
            plistLinkPath="2loj8bmorcu0sow"
            fileName="BM_test_NEW"
            qrCodeFileName="test_stg"
