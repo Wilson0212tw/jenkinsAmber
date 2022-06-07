@@ -55,37 +55,69 @@ fi
 
 
 #步驟3: 製作plist檔，放進暫存資料夾
-echo "<?xml version="1.0" encoding="UTF-8"?>
+echo  "<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-        <key>items</key>
-        <array>
-                <dict>
-                        <key>assets</key>
-                        <array>
-                                <dict>
-                                        <key>kind</key>
-                                        <string>software-package</string>
-                                        <key>url</key>
-                                        <string>https://dl.dropboxusercontent.com/s/$ipaLinkPath/$fileName.ipa</string>
-                                </dict>
-                        </array>
-                        <key>metadata</key>
-                        <dict>
-                                <key>bundle-identifier</key>
-                                <string>$3</string>
-                                <key>title</key>
-                                <string>$1</string>
-                                <key>kind</key>
-                                <string>software</string>
-                                <key>bundle-version</key>
-                                <string>1.0</string>
-                        </dict>
-                </dict>
-        </array>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>assets</key>
+			<array>
+				<dict>
+					<key>kind</key>
+					<string>software-package</string>
+					<key>url</key>
+					<string>https://dl.dropboxusercontent.com/s/$ipaLinkPath/$fileName.ipa</string>
+				</dict>
+			</array>
+			<key>metadata</key>
+			<dict>
+				<key>title</key>
+				<string>$1</string>
+				<key>bundle-version</key>
+				<string>1.0</string>
+				<key>kind</key>
+				<string>software</string>
+				<key>bundle-identifier</key>
+				<string>$3</string>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>" > ../../tempReleaseFolder/$fileName.plist
+
+# echo "<?xml version="1.0" encoding="UTF-8"?>
+# <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+# <plist version="1.0">
+# <dict>
+#         <key>items</key>
+#         <array>
+#                 <dict>
+#                         <key>assets</key>
+#                         <array>
+#                                 <dict>
+#                                         <key>kind</key>
+#                                         <string>software-package</string>
+#                                         <key>url</key>
+#                                         <string>https://dl.dropboxusercontent.com/s/$ipaLinkPath/$fileName.ipa</string>
+#                                 </dict>
+#                         </array>
+#                         <key>metadata</key>
+#                         <dict>
+#                                 <key>bundle-identifier</key>
+#                                 <string>$3</string>
+#                                 <key>title</key>
+#                                 <string>$1</string>
+#                                 <key>kind</key>
+#                                 <string>software</string>
+#                                 <key>bundle-version</key>
+#                                 <string>1.0</string>
+#                         </dict>
+#                 </dict>
+#         </array>
+# </dict>
+# </plist>" > ../../tempReleaseFolder/$fileName.plist
 
 
 #步驟4: 將下載頁拉下來，放進暫存資料夾
