@@ -88,7 +88,7 @@ pipeline {
                             sh "printenv | sort"
                         switch (params.平台) {
                             case 'ios':
-                                sh 'make release-ios'
+                                sh 'make build-ios;make release-ios'
                                 break;
                             case 'android':
                                 sh 'make build-android'
