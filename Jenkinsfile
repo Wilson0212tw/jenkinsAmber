@@ -94,7 +94,7 @@ pipeline {
                                 sh 'make build-android'
                                 break;
                             case 'both':
-                                sh 'make release-ios;make build-android'
+                                sh 'make build-ios;make release-ios;make build-android'
                                 break;
                         }
                     }
