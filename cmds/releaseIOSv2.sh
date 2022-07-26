@@ -40,11 +40,17 @@ if [ $2  ==  stg ] ; then
             qrCodeFileName="test_stg2"
        fi
 elif [ $2  ==  dev ] ; then
-        ipaLinkPath="sxc924o2dgbse2k"
-        plistLinkPath="pb9dcd63yw0lso8"
-          fileName="BM_dev"
-          qrCodeFileName="dev"
-
+        if [ $4  ==  1  ] ; then
+             ipaLinkPath="sxc924o2dgbse2k"
+             plistLinkPath="pb9dcd63yw0lso8"
+              fileName="BM_dev"
+              qrCodeFileName="dev"
+        else
+            ipaLinkPath="snj3hrmxc8xmtpa"
+            plistLinkPath="a3yvpyepgvl05xb"
+            fileName="BM_dev1"
+            qrCodeFileName="dev1"
+       fi
 else
           ipaLinkPath="dsmzclpfu88gepu"
         plistLinkPath="ol5kx1fmf5b0fvh"

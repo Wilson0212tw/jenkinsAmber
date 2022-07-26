@@ -56,7 +56,7 @@ pipeline {
                         case 'stg':
                             envName = 'stg'
                             break
-                               case 'stg2':
+                        case 'stg2':
                             envName = 'stg2'
                             break
                         case 'prd':
@@ -67,6 +67,9 @@ pipeline {
                             break
                          case 'dev':
                             envName = 'dev'
+                            break
+                        case 'dev1':
+                            envName = 'dev1'
                             break
                         default:
                             break
@@ -137,6 +140,12 @@ pipeline {
                             downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=dev'
                             bundleId = 'com.amber.bmdev'
                             envVer = "1"
+                            break;
+                         case 'dev1':
+                            envStg = "dev"
+                            downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=dev'
+                            bundleId = 'com.amber.bmdev1'
+                            envVer = "2"
                             break;
       
                     }
