@@ -147,6 +147,12 @@ pipeline {
                             bundleId = 'com.amber.bmdev1'
                             envVer = "2"
                             break;
+                         case 'dev2':
+                            envStg = "dev"
+                            downloadUrl = 'http://dl.phl5b.org/bm-install.html?env=dev'
+                            bundleId = 'com.amber.bmdev2'
+                            envVer = "3"
+                            break;
       
                     }
                 }

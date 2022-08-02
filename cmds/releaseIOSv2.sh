@@ -21,6 +21,10 @@ cp ../../app/build/Runner.ipa ../../tempReleaseFolder/$1.ipa
 # https://www.dropbox.com/s/9axp60nequqxwaq/BM_test_NEW2.plist?dl=0
 # https://www.dropbox.com/s/ol5kx1fmf5b0fvh/BM_PRD_NEW.plist?dl=0
 
+#https://www.dropbox.com/s/snj3hrmxc8xmtpa/BM_dev1.ipa?dl=0
+#https://www.dropbox.com/s/a3yvpyepgvl05xb/BM_dev1.plist?dl=0
+#https://www.dropbox.com/s/4ze4jl8jzfurc0s/BM_dev2.ipa?dl=0
+#https://www.dropbox.com/s/6baiqo7yj5zsblp/BM_dev2.plist?dl=0
 
 ipaLinkPath=''
 plistLinkPath=''
@@ -45,15 +49,20 @@ elif [ $2  ==  dev ] ; then
              plistLinkPath="pb9dcd63yw0lso8"
               fileName="BM_dev"
               qrCodeFileName="dev"
+        elif [ $4  ==  2  ] ; then
+              ipaLinkPath="snj3hrmxc8xmtpa"
+              plistLinkPath="a3yvpyepgvl05xb"
+              fileName="BM_dev1"
+              qrCodeFileName="dev1"
         else
-            ipaLinkPath="snj3hrmxc8xmtpa"
-            plistLinkPath="a3yvpyepgvl05xb"
-            fileName="BM_dev1"
-            qrCodeFileName="dev1"
+            ipaLinkPath="4ze4jl8jzfurc0s"
+            plistLinkPath="6baiqo7yj5zsblp"
+            fileName="BM_dev2"
+            qrCodeFileName="dev2"
        fi
 else
           ipaLinkPath="dsmzclpfu88gepu"
-        plistLinkPath="ol5kx1fmf5b0fvh"
+          plistLinkPath="ol5kx1fmf5b0fvh"
           fileName="BM_PRD_NEW"
           qrCodeFileName="prd"
 fi
