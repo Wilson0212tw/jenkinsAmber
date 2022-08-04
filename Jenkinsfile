@@ -71,6 +71,9 @@ pipeline {
                         case 'dev1':
                             envName = 'dev1'
                             break
+                          case 'dev2':
+                            envName = 'dev2'
+                            break
                         default:
                             break
                     }   
